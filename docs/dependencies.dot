@@ -1,0 +1,14 @@
+digraph {
+
+    reverseproxy -> webui, auth, iothubmanager, devicesimulation, telemetry, config
+    webui -> auth, iothubmanager, devicesimulation, telemetry, config, diagnostics
+    auth
+    iothubmanager -> auth, storageadapter
+    devicesimulation -> storageadapter
+    telemetry -> auth, storageadapter
+    config -> auth, storageadapter, devicesimulation, telemetry
+    storageadapter
+    asamanager -> telemetry, iothubmanager, config
+    diagnostics -> config
+    
+}
